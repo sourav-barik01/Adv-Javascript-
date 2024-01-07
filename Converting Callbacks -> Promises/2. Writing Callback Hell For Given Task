@@ -4,7 +4,7 @@ function download(url, cb){
         console.log("Download Complete");
         const content = "axbycz";
         cb(content);
-    }, 500);
+    }, 5000);
 }
 
 function writeFile(data, cb){
@@ -13,7 +13,7 @@ function writeFile(data, cb){
         console.log("Completed Writing Data in the File");
         const filename = "file.txt";
         cb(filename);
-    }, 700);
+    }, 7000);
 }
 
 function upload(url, file, cb){
@@ -22,7 +22,7 @@ function upload(url, file, cb){
         console.log("Upload Complete");
         const response = "Success!!";
         cb(response);
-    }, 900);
+    }, 9000);
 }
 
 download("www.xyz.com", function processDownload(content){
