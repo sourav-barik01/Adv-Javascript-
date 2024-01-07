@@ -1,1 +1,61 @@
+In JavaScript an iterator is an object which defines a sequence and potentially a return value upon its termination.
+Specifically, an iterator is any object which implements the Iterator protocol by having a next() method that returns an object with two properties :
+(i) value : The next value in the iteration sequence.
+(ii) done : This is true if the last value in the sequence has already been consumed. If value is present alongside done, it is the iterator's return value.
 
+Once created, an iterator object can be iterated explicitly by repeatedly calling next(). Iterating over an iterator is said to consume the iterator, 
+because it is generally only possible to do once. After a terminating value has been yielded additional calls to next() should continue to return {done: true}.
+The most common iterator in JavaScript is the Array iterator, which returns each value in the associated array in sequence.
+
+Consider This Example Where we have implemented our custom iterator which return an obj of {value, done}:
+function fetchNextElement(arr){
+    let idx = 0;
+    function next(){
+        if(idx == arr.length){
+            return {value:undefined, done:true}
+        }
+        let nextElement = arr[idx];
+        idx++;
+        return {value:nextElement, done:false};
+    }
+    return next;
+}
+
+const autoFetch = fetchNextElement([1,2,3,4,5,6]);
+for(let i=0; i<7; i++){
+    console.log(autoFetch());
+}
+
+// Output :
+{ value: 1, done: false }
+{ value: 2, done: false }
+{ value: 3, done: false }
+{ value: 4, done: false }
+{ value: 5, done: false }
+{ value: 6, done: false }
+{ value: undefined, done: true }
+
+
+
+But in shorthand, the iterator can also be used. See below for more reference :
+[Note : This Code is first written in Google console then directly copied here]
+> let arr = [1,2,3,4,5,6,7];
+undefined
+> iterator = arr[Symbol.iterator]();
+Array Iterator {}
+> iterator.next();
+<- {value: 1, done: false}
+> iterator.next();
+<- {value: 2, done: false}
+> iterator.next();
+<- {value: 3, done: false}
+> iterator.next();
+<- {value: 4, done: false}
+> iterator.next();
+<- {value: 5, done: false}
+> iterator.next();
+<- {value: 6, done: false}
+> iterator.next();
+<- {value: 7, done: false}
+> iterator.next();
+<- {value: undefined, done: true}
