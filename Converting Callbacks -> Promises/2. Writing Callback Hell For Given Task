@@ -1,0 +1,36 @@
+function download(url, cb){
+    console.log("Starting to Download Data From", url);
+    setTimeout(function down(){
+        console.log("Download Complete");
+        const content = "axbycz";
+        cb(content);
+    }, 500);
+}
+
+function writeFile(data, cb){
+    console.log("Started Writing File w/", data);
+    setTimeout(function write(){
+        console.log("Completed Writing Data in the File");
+        const filename = "file.txt";
+        cb(filename);
+    }, 700);
+}
+
+function upload(url, file, cb){
+    console.log("Started Uploading", file, "on", url);
+    setTimeout(function up(){
+        console.log("Upload Complete");
+        const response = "Success!!";
+        cb(response);
+    }, 900);
+}
+
+download("www.xyz.com", function processDownload(content){
+    console.log("We are now Going to Process the Downloaded Data");
+    writeFile(content, function processWrite(filename){
+        console.log("We have written the file in the downloaded data");
+        upload("www.upload.com", filename, function processUpload(response){
+            console.log("We have Uploaded the file", response);
+        });
+    });
+});
