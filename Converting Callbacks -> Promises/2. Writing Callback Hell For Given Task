@@ -3,7 +3,7 @@ function download(url, cb){
     setTimeout(function down(){
         console.log("Download Complete");
         const content = "axbycz";
-        cb(content);
+        cb(content);                    // If this is not called; or you actually don't know how many times it will be called, is known as Inversion Of Control
     }, 5000);
 }
 
@@ -25,7 +25,7 @@ function upload(url, file, cb){
     }, 9000);
 }
 
-download("www.xyz.com", function processDownload(content){
+download("www.xyz.com", function processDownload(content){                    // Callback Hell is taking place as you can clearly see the code implementation is fine only problem is with readability
     console.log("We are now Going to Process the Downloaded Data");
     writeFile(content, function processWrite(filename){
         console.log("We have written the file in the downloaded data");
@@ -34,3 +34,17 @@ download("www.xyz.com", function processDownload(content){
         });
     });
 });
+
+
+
+
+// Output :
+Starting to Download Data From www.xyz.com
+Download Complete
+We are now Going to Process the Downloaded Data
+Started Writing File w/ axbycz
+Completed Writing Data in the File
+We have written the file in the downloaded data
+Started Uploading file.txt on www.upload.com
+Upload Complete
+We have Uploaded the file Success!!
