@@ -1,1 +1,61 @@
+/* Converting Callback Hell & IOC -> Promises will resolve the issue as we have to pass the resolve and reject state; which is ultimately helpful to known how our
+function is actually performing. Also we can call callback() multiple times but here in promises; the states can be updated */
 
+function download(url){
+    return new Promise(function exec(resolve, reject){
+       console.log("Starting to Download Data From", url);
+        setTimeout(function down(){
+            console.log("Download Complete");
+            const content = "axbycz";
+            resolve(content);
+        }, 500); 
+    });
+}
+
+function writeFile(data){
+    return new Promise(function exec(resolve, reject){
+        console.log("Started Writing File w/", data);
+        setTimeout(function write(){
+            console.log("Completed Writing Data in the File");
+            const filename = "file.txt";
+            resolve(filename);
+        }, 700);
+    });
+}
+
+function upload(url, file, cb){
+    return new Promise(function exec(resolve, reject){
+        console.log("Started Uploading", file, "on", url);
+        setTimeout(function up(){
+            console.log("Upload Complete");
+            const response = "Success!!";
+            resolve(response);
+        }, 900);
+    });
+}
+
+download("www.xyz.com")                          // Benefits Of Using .then() Chaining
+.then(function processDownload(value){
+    console.log("Downloading Done With Following Values", value);
+    return writeFile(value);
+})
+.then(function processWrite(value){
+    console.log("Data Written In File w/ Name", value);
+    return upload(value, "www.upload.com");
+})
+.then(function processUpload(value){
+    console.log("Uploaded w/", value);
+})
+
+
+
+// Output :
+Starting to Download Data From www.xyz.com
+Download Complete
+Downloading Done With Following Values axbycz
+Started Writing File w/ axbycz
+Completed Writing Data in the File
+Data Written In File w/ Name file.txt
+Started Uploading www.upload.com on file.txt
+Upload Complete
+Uploaded w/ Success!!
