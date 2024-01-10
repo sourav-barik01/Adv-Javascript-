@@ -19,8 +19,8 @@ function* makeRangeIterator(start = 0, end = 5, step = 1) {
   }
 }
 
-const iter = makeRangeIterator();        // This doesn't means the function is run. Here, the function is executed line by line using iter.next()
-console.log(iter.next());
+const iter = makeRangeIterator();        // This doesn't means the function is run. Here, the function will executed line by line using iter.next() till 
+console.log(iter.next());                   it find yield in it. As soon as it sees yield it get returned. And next iter.next() starts from other line
 console.log(iter.next());
 console.log(iter.next());
 console.log(iter.next());
