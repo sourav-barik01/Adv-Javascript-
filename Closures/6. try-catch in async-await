@@ -1,0 +1,15 @@
+The most common way to handle errors in async-await code is by using try-catch blocks, similar to how you would handle errors in synchronous code.
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    console.log(data);
+  } 
+  catch (error) {
+    console.error('Error:', error);
+  }
+}
+fetchData();
+
+In this example, if an error occurs during the fetch() call or when parsing the JSON, the error will be caught and logged to the console.
