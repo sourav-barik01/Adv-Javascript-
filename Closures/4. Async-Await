@@ -1,1 +1,63 @@
+The async function declaration creates a binding of a new async function to a given name. 
+The await keyword is permitted within the function body, enabling asynchronous, promise-based behavior to be written in a cleaner style & 
+avoiding the need to explicitly configure promise chains.
 
+Async functions always return a promise. If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
+
+// Consider This Eg:
+function resolveAfter2Seconds() {
+  console.log("Starting The Promise");
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // Expected output: "resolved"
+}
+asyncCall();
+console.log("Ending The Statement");
+
+// Output :
+> "calling"
+> "Starting The Promise"
+> "Ending The Statement"
+> "resolved"
+
+
+An async function declaration creates an AsyncFunction object. 
+Each time when an async function is called, it returns a new Promise which will be resolved with the value returned by the async function, 
+or rejected with an exception uncaught within the async function.
+Async functions can contain zero or more await expressions. 
+Await expressions make promise-returning functions behave as though they're synchronous by suspending execution until the returned promise is fulfilled or rejected.
+The resolved value of the promise is treated as the return value of the await expression. 
+Use of async and await enables the use of ordinary try / catch blocks around asynchronous code.
+
+> Note :
+Even though the return value of an async function behaves as if it's wrapped in a Promise.resolve, they are not equivalent.
+An async function will return a different reference, whereas Promise.resolve returns the same reference if the given value is a promise.
+It can be a problem when you want to check the equality of a promise and a return value of an async function.
+> Eg:
+  const p = new Promise((res, rej) => {
+    res(1);
+  });
+  
+  async function asyncReturn() {
+    return p;
+  }
+  
+  function basicReturn() {
+    return Promise.resolve(p);
+  }
+  
+  console.log(p === basicReturn()); // true
+  console.log(p === asyncReturn()); // false
+
+The body of an async function can be thought of as being split by zero or more await expressions. 
+Top-level code, up to and including the first await expression (if there is one), is run synchronously. 
+In this way, an async function without an await expression will run synchronously. 
+If there is an await expression inside the function body, however, the async function will always complete asynchronously.
