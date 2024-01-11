@@ -9,6 +9,8 @@ async function fetchData() {
   catch (error) {
     console.error('Error:', error);
   }
+finally {
+    console.log("Code Ended");
 }
 fetchData();
 
