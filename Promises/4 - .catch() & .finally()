@@ -1,0 +1,20 @@
+function myFunction() {
+  return new Promise(function exc(res, rej){
+      res("Promise Executed");
+  });
+}
+let x = myFunction()
+x.then(function done(){            // .then() chaining function can also be performed
+    console.log("Run Successfully");
+})
+.catch(function cat(err){          // Will run only if error is found in code
+    console.log("Something went wrong");
+})
+.finally(function fin() {          // It will always run either the code is successfull or error find
+    console.log("Code Ended");
+})
+
+
+// Output : 
+Run Successfully
+Code Ended
