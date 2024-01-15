@@ -1,6 +1,7 @@
 /*
 When a function is called with the new keyword, the function will be used as a constructor. new will do the following things:
-Creates a blank, plain JavaScript object. For convenience, let's call it newInstance. 
+> Creates a blank, plain JavaScript object. For convenience, let's call it newInstance. 
+> It get link to a obj.prototype
 */
     
 // Consider This Eg.
