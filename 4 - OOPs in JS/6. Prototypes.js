@@ -49,6 +49,8 @@ own prototype, making what's called a prototype chain. The chain ends when we re
 If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is 
 reached, in which case undefined is returned.
 
+See This Image : https://photos.app.goo.gl/tawbw7QoDGyHU1eP9
+
 So when we call myObject.toString(), the browser:
 > looks for toString in myObject
 > can't find it there, so looks in the prototype object of myObject for toString
