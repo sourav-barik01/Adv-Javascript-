@@ -49,7 +49,17 @@ own prototype, making what's called a prototype chain. The chain ends when we re
 If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is 
 reached, in which case undefined is returned.
 
+
+
 See This Image : https://photos.app.goo.gl/tawbw7QoDGyHU1eP9
+Here; d which is a obj of product...
+const d = new Product("Ipad");
+d.__proto__ === Product.prototype      // true
+Here, d is trying to fetch the prototype by __proto__ property(it will take you to display() method). Whereas, Product directly fetch it using Product.prototype
+And, if you do d.__proto__.__proto__ => it will take you to top level prototype where toString() properties are there
+& if you use d.constructor it will give back the function Product bcz, d pointing to Product.prototype and using .constructor, it will take you to the function
+
+
 
 So when we call myObject.toString(), the browser:
 > looks for toString in myObject
