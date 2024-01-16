@@ -32,3 +32,7 @@ Object.setPrototypeOf(B.prototype, A.prototype);            // In Console : A {
 
 const x = new B();
 x.fun();        // Expected Output : Hi I am in A
+
+<-------------------------------------------------------------------------
+
+// Therefore you can use in js, there is only multilevel inheritance and no multiple inheitance. Same is in the case of JAVA
