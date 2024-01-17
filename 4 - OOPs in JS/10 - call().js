@@ -11,8 +11,8 @@ const unboundGetX = moduless.getX;
 console.log(unboundGetX());     // The function gets invoked at the global scope due to which this gives undefined
 // Expected output: undefined
 
-const value = unboundGetX.call(moduless);
-console.log(value);
+const boundGetX  = unboundGetX.call(moduless);
+console.log(boundGetX );
 // Expected output: 42
 
 // Always keep in mind the major difference b/w bind() and call() is bind returns a new function whereas call() doesn't and works on same function
