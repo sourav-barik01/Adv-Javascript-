@@ -36,9 +36,11 @@ function outerFunction(){
     return innerFunction;
 }
 
-let x = outerFunction();
+let x = outerFunction();     // Here outerFunction() return innerFunction and we store it in x and call it x() basically innerFunction(). Therefore, printing 1 & 2
 // console.log(x());        // prints 1
 // console.log(x());        // prints 2
+
+// if only written outerFunction() again and again we will only get 1 because here closure every time initialize it with new value i.e; i = 0.
 
 for(let i=0; i<5; i++){
     console.log(x());
