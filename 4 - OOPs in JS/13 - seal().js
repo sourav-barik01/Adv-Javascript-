@@ -15,3 +15,6 @@ console.log(object1.property1);
 delete object1.property1;     // But Cannot delete when sealed or perform new operation when seal
 console.log(object1.property1);
 // Expected output: 33
+
+
+// Remeber : Cannot add new properties but can update old properties
