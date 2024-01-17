@@ -25,7 +25,7 @@ var obj3 = {
 }
 
 
-console.log(this);      // Expected o/p : {} bcz this in lexical scoping or in arrow function returned empty obj / undefined
+console.log(this);      // Expected o/p : {} bcz in arrow function this work as lexical scoping & returned empty obj / undefined
 obj1.display();      // Expected o/p : undefined is undefined and is student of BIT Mesra
 obj2.display();      // Expected o/p : undefined is undefined and is student of BIT Mesra
 obj3.display();      // Expected o/p : Sourav is Not Placed and is student of BIT Mesra
