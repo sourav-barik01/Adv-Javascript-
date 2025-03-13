@@ -1,0 +1,10 @@
+// Values that are considered as falsy by JAVASCRIPT are as follow :
+false
+null
+undefined
+0
+-0
+NaN
+An empty string ("")
+
+Excluding this everything is JS is considered as Truthy Values...
