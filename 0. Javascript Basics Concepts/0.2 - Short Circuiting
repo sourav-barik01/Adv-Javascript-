@@ -1,0 +1,12 @@
+// CONCEPT OF SHORT CIRCUITING
+
+console.log(10 && 6);
+// When we do &&, then if first value is true then it directly return the second value. And if first value is false then it directly return the first value
+console.log(0 && 6) // Here 0 is a falsy value, therefore 1st value is returned
+
+// In case of || if first value is true then first value is returned and if first value is false then second value is returned
+console.log(10 || 6);
+console.log(0 || 10);
+console.log(0 || 10 && 6); // Here 6 will be returned bcz 0 is falsy therefore return second value (10 && 6) and && return second value i.e 6 bcz 10 is truthy
+
+// This is known as Short Circuiting
