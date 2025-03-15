@@ -13,3 +13,12 @@ console = {
 /* Ans to 1st Ques : We are doing return to store that value so that value can be stored and used for later. But if we 
 use console.log(), it will only be shown in the screen and can't be used anywhere...
 Also if we dont return anything it automatically return undefined... */
+
+// My own console.log
+let output = {
+    myWork : function (demo) {
+        return demo;
+    }
+}
+let result = output.myWork("Hello");
+console.log(result);
