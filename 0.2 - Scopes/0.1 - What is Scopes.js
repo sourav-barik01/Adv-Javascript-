@@ -1,5 +1,10 @@
 /* What is Scopes ? -> It means visibility of variables & function
-Types Of Scopes -> 3 types mainly (Global Scope, Function Scope & Block Scope) */
+--> JavaScript has 4 kinds of scopes:
+a) Global scope: The default scope for all code running in script mode.
+b) Module scope: The scope for code running in module mode.
+c) Function scope: The scope created with a function.
+--> In addition, identifiers declared with certain syntaxes, including let, const, class, or (in strict mode) function, can belong to an additional scope:
+d) Block scope: The scope created with a pair of curly braces (a block) */
 
 /* Everything inside our code will be used in one of the following 2 ways
 a) Either it will be getting some values assigned to it
