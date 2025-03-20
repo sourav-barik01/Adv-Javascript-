@@ -18,6 +18,10 @@ console.lo("Bye");                       Uncaught TypeError: console.lo is not a
 --> Behaving like COMPILED
 Input :                                  Output :
 console.log("Hello World");              Uncaught SyntaxError: Unexpected Token '......'
-console......log("Bye"); */
+console......log("Bye"); 
+--> JavaScript is both interpreted and compiled — it's considered a hybrid language.
+Traditionally: JavaScript was interpreted by browsers (executed line-by-line using an interpreter).
+Modern JavaScript Engines (like V8 in Chrome and Node.js) use Just-In-Time (JIT) compilation, which compiles 
+JavaScript code into machine code at runtime for faster execution */
 
 // We will study about how js execution takes place on next file...
