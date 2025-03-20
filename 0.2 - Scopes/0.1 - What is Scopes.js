@@ -1,4 +1,5 @@
-// What is Scopes ? -> It means visibility of variables & function
+/* What is Scopes ? -> It means visibility of variables & function
+Types Of Scopes -> 3 types mainly (Global Scope, Function Scope & Block Scope) */
 
 /* Everything inside our code will be used in one of the following 2 ways
 a) Either it will be getting some values assigned to it
