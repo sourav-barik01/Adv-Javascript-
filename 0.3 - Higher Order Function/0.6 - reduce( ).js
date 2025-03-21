@@ -1,5 +1,6 @@
 /*
-a) reduce() is a HOF available for arrays which takes function f as argument.
+a) reduce() is a HOF available for arrays which takes function f as argument and the final result of running the 
+reducer across all elements of the array is a single value.
 b) What reduce() do is, go to every element of an array say current element as arr[i], reduce() will pass this element to the 
 function f, and accumulate the result of further function calls with this particular result.
 */
