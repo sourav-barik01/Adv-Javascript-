@@ -8,3 +8,5 @@ function myCallback(a) {
 }
 
 clearInterval(intervalID);    // -> Helps to clear the interval
+
+// Read this Code - https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval#example_2_alternating_two_colors
