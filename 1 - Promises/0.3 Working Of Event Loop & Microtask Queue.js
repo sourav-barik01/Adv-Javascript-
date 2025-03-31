@@ -24,5 +24,5 @@ console.log("Ending...");
 // Starting...
 // Resolving the Promise
 // Ending...
-// We fulfilled with value Done
+// We fulfilled with value Done  ->  priority of microtask queue >>>> callback queue
 // Inside Timer
