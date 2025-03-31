@@ -1,3 +1,4 @@
+console.log("Starting");
 function getRandomNumber(num){
     return Math.floor(Math.random()*num);
 }
@@ -15,22 +16,37 @@ function createPromiseWithLoop(){
 }
 function createPromiseWithAsync(){
     return new Promise(function exec(resolve, reject) {
-        setTimeout(function() {
-           let x = getRandomNumber(6);
-            if(x % 2 == 0) {
-              resolve("Ok");
-            }
-            else {
-              reject("Not Ok");
-            } 
-        });
+      console.log("Inside Async Promise");
+      setTimeout(function() {
+         let x = getRandomNumber(6);
+          if(x % 2 == 0) {
+            resolve("Ok");
+          }
+          else {
+            reject("Not Ok");
+          } 
+      }, 3000);
     })
 }
+console.log("Getting Deep Dive");
 let ans = createPromiseWithLoop();
-let ans1 = createPromiseWithAsync();
 console.log(ans);  // Promise { 'Ok' }
+console.log("Sync Promise Done");
+let ans1 = createPromiseWithAsync();
 console.log(ans1);  // Promise { <pending> }
+console.log("Async Promise Done");
+console.log("Ending");
 
+
+// Output:
+// Starting
+// Getting Deep Dive
+// Promise { <rejected> 'Not Ok' }
+// Sync Promise Done
+// Inside Async Promise
+// Promise { <pending> }
+// Async Promise Done
+// Ending
 
 /*
 For printing ans, the promise will wait till for loop is over and getRandmonNumber runs and provide the desired output 
