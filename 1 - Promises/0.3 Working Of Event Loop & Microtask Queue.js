@@ -1,4 +1,24 @@
 // Eg : 1
+function createPromise() {
+    return new Promise(function exec(resolve, reject) {
+        resolve(777);
+    })
+}
+let p = createPromise();
+p.then(function onFulfillHandler(val) {
+    console.log("asynchronous logging has val:", val)
+}, function onRejectHandler(val) {
+    console.log("The Handle is Rejected with val:", val);
+})
+console.log("Immediate Logging")
+
+// Output:
+// Immediate Logging
+// asynchronous logging has val: 777
+
+/*****************************************************************************************************************/
+
+// Eg : 2
 console.log("Starting...");
 function createPromise() {
   return new Promise(function exec(resolve, reject) {
@@ -30,7 +50,7 @@ console.log("Ending...");
 
 /*****************************************************************************************************************/
 
-// Eg : 2
+// Eg : 3
 console.log("Starting...");
 function createPromise() {
   return new Promise(function exec(resolve, reject) {
