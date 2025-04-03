@@ -29,3 +29,23 @@ console.log("End");
 /***********************************************************************************/ 
 
 // Eg : 2
+console.log("Start Of File...");
+setTimeout(function() {
+  console.log("Timer 1 Done");
+}, 0);
+for(let i=0; i<10000; i++) {}
+let p = Promise.resolve("Sourav's Promise!!");   // => Discussed in 0.7
+p.then(function processPromise(value) {
+  console.log("Whose's Promise ?", value);
+});
+setTimeout(function() {
+  console.log("Timer 2 Done");
+}, 0);
+console.log("End Of File...");
+
+// Output:
+// Start Of File...
+// End Of File...
+// Whose's Promise ? Sourav's Promise!!
+// Timer 1 Done
+// Timer 2 Done
